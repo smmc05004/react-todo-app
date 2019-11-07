@@ -30,4 +30,7 @@ const TodoListItem = ({ todo, onRemove, onToggle, style }) => {
   );
 };
 
-export default memo(TodoListItem);
+export default memo(
+  TodoListItem,
+  (preProps, nextProps) => preProps.todo === nextProps.todo,
+);
